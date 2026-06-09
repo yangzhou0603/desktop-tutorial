@@ -1,0 +1,28 @@
+{
+  "task_code": "tsc_vehicle_detection",
+  "task_focus": "vehicle detection",
+  "source_json": "/data/home_dir/wangpeizhi/v1-TSC/tir-0416/tir_trans_0416/json_out_pipei_v1225_addspeed/HHL_QHDD_HHL_QHDD_E_1766018607828.json",
+  "source_json_name": "HHL_QHDD_HHL_QHDD_E_1766018607828.json",
+  "timestamp": 1766018607.8289979,
+  "vehicle_count": 2,
+  "vehicles": [
+    {
+      "id": "6717",
+      "orig_id": "6717",
+      "type": "car",
+      "center": [
+        -5.506836414337158,
+        33.48326873779297
+      ]
+    },
+    {
+      "id": "6732",
+      "orig_id": "6732",
+      "type": "car",
+      "center": [
+        6.219628810882568,
+        73.1992416381836
+      ]
+    }
+  ]
+}
