@@ -755,6 +755,43 @@
       }
     }
 
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 8px;
+      padding-left: 14px;
+      border-left: 1px solid var(--line);
+    }
+
+    .lang-btn {
+      padding: 6px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--muted);
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-body);
+      transition: color 140ms;
+      line-height: 1;
+    }
+
+    .lang-btn:hover {
+      color: var(--navy);
+    }
+
+    .lang-btn.lang-active {
+      color: var(--blue);
+    }
+
+    .lang-sep {
+      color: var(--line);
+      font-size: 13px;
+      user-select: none;
+    }
+
     @media (max-width: 720px) {
       .shell {
         width: min(100% - 28px, 1200px);
@@ -809,11 +846,16 @@
         </span>
       </a>
       <div class="nav-links">
-        <a href="#entry">统一入口</a>
-        <a href="#perception">感知能力</a>
-        <a href="#flow">融合流程</a>
-        <a href="https://github.com/OpenTraffic-Team/" target="_blank" rel="noreferrer">共同接口</a>
-        <a class="nav-cta" href="https://opentraffic-team.github.io/" target="_blank" rel="noreferrer">官网入口</a>
+        <a href="#entry" data-zh="统一入口" data-en="Entry">统一入口</a>
+        <a href="#perception" data-zh="感知能力" data-en="Perception">感知能力</a>
+        <a href="#flow" data-zh="融合流程" data-en="Fusion Flow">融合流程</a>
+        <a href="https://github.com/OpenTraffic-Team/" target="_blank" rel="noreferrer" data-zh="共同接口" data-en="Shared Interface">共同接口</a>
+        <a class="nav-cta" href="https://opentraffic-team.github.io/" target="_blank" rel="noreferrer" data-zh="官网入口" data-en="Official Site">官网入口</a>
+        <div class="lang-switch">
+          <button class="lang-btn" data-lang="en" onclick="setLang('en')">English</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn lang-active" data-lang="zh" onclick="setLang('zh')">中文</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -823,27 +865,27 @@
       <div class="shell hero-grid">
         <div>
           <div class="eyebrow">OpenTraffic Official Fusion Site</div>
-          <h1><span class="gradient-text">把交通控制与视频感知</span><br />放进同一个入口</h1>
-          <p class="lead">
+          <h1><span class="gradient-text" data-zh="把交通控制与视频感知" data-en="Traffic control and video perception">把交通控制与视频感知</span><br /><span data-zh="放进同一个入口" data-en="in one unified entry">放进同一个入口</span></h1>
+          <p class="lead" data-zh="面向对外展示、项目汇报和系统对接，统一使用 OpenTraffic 官网作为主入口；页面集中呈现 4 个 TSC 视频感知结果，并通过 OpenTraffic Team 共同接口承接后续仓库与接口材料。" data-en="Built for external showcases, project presentations, and system integration — the OpenTraffic website serves as the single main entry point, presenting 4 TSC video perception results and linking all repositories and interface materials through the OpenTraffic Team shared interface.">
             面向对外展示、项目汇报和系统对接，统一使用 OpenTraffic 官网作为主入口；页面集中呈现 4 个 TSC 视频感知结果，并通过 OpenTraffic Team 共同接口承接后续仓库与接口材料。
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://opentraffic-team.github.io/" target="_blank" rel="noreferrer">进入 OpenTraffic 官网</a>
-            <a class="button green" href="#perception">查看 4 个视频结果</a>
-            <a class="button" href="https://github.com/OpenTraffic-Team/" target="_blank" rel="noreferrer">打开共同接口</a>
+            <a class="button primary" href="https://opentraffic-team.github.io/" target="_blank" rel="noreferrer" data-zh="进入 OpenTraffic 官网" data-en="Visit OpenTraffic Site">进入 OpenTraffic 官网</a>
+            <a class="button green" href="#perception" data-zh="查看 4 个视频结果" data-en="View 4 Video Results">查看 4 个视频结果</a>
+            <a class="button" href="https://github.com/OpenTraffic-Team/" target="_blank" rel="noreferrer" data-zh="打开共同接口" data-en="Open Shared Interface">打开共同接口</a>
           </div>
           <div class="hero-proof" aria-label="交付概览">
             <div class="proof-card">
               <strong>1</strong>
-              <span>统一对外官网入口</span>
+              <span data-zh="统一对外官网入口" data-en="Unified official entry">统一对外官网入口</span>
             </div>
             <div class="proof-card">
               <strong>4</strong>
-              <span>TSC 视频感知任务</span>
+              <span data-zh="TSC 视频感知任务" data-en="TSC perception tasks">TSC 视频感知任务</span>
             </div>
             <div class="proof-card">
               <strong>Team</strong>
-              <span>共同接口与仓库组织</span>
+              <span data-zh="共同接口与仓库组织" data-en="Shared interface &amp; repos">共同接口与仓库组织</span>
             </div>
           </div>
         </div>
@@ -855,8 +897,8 @@
               <div class="status-pill">Ready</div>
               <div class="floating-panel">
                 <b>Perception Result</b>
-                <strong>车辆检测结果已接入</strong>
-                <span>真实道路视频作为主视觉，突出从画面目标到结构化结果的感知能力。</span>
+                <strong data-zh="车辆检测结果已接入" data-en="Vehicle Detection Connected">车辆检测结果已接入</strong>
+                <span data-zh="真实道路视频作为主视觉，突出从画面目标到结构化结果的感知能力。" data-en="Real-world road footage as the main visual, highlighting structured perception results from raw video.">真实道路视频作为主视觉，突出从画面目标到结构化结果的感知能力。</span>
               </div>
             </div>
           </div>
@@ -869,16 +911,16 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Unified Entry</div>
-            <h2>对外只保留一个主入口</h2>
+            <h2 data-zh="对外只保留一个主入口" data-en="One Single External Entry Point">对外只保留一个主入口</h2>
           </div>
-          <p>官网负责给用户看，融合页负责承载感知结果，共同接口负责后续代码、文档和系统对接。三者角色清楚，汇报时不需要来回解释本地路径。</p>
+          <p data-zh="官网负责给用户看，融合页负责承载感知结果，共同接口负责后续代码、文档和系统对接。三者角色清楚，汇报时不需要来回解释本地路径。" data-en="The official site faces users, the fusion page hosts perception results, and the shared interface handles repositories and integration materials — clear roles, no need to explain local paths during presentations.">官网负责给用户看，融合页负责承载感知结果，共同接口负责后续代码、文档和系统对接。三者角色清楚，汇报时不需要来回解释本地路径。</p>
         </div>
         <div class="entry-grid">
           <article class="entry-card blue">
             <div>
               <div class="card-index">Official Website</div>
-              <h3>OpenTraffic 官网</h3>
-              <p>作为唯一推荐对外入口，适合放到汇报材料、项目说明和客户演示中。</p>
+              <h3 data-zh="OpenTraffic 官网" data-en="OpenTraffic Official Site">OpenTraffic 官网</h3>
+              <p data-zh="作为唯一推荐对外入口，适合放到汇报材料、项目说明和客户演示中。" data-en="The sole recommended external entry — suitable for reports, project briefs, and client demos.">作为唯一推荐对外入口，适合放到汇报材料、项目说明和客户演示中。</p>
             </div>
             <a class="card-link" href="https://opentraffic-team.github.io/" target="_blank" rel="noreferrer">https://opentraffic-team.github.io/</a>
           </article>
@@ -886,17 +928,17 @@
           <article class="entry-card">
             <div>
               <div class="card-index">Perception Showcase</div>
-              <h3>感知结果展示</h3>
-              <p>只展示车辆检测、多目标跟踪、世界坐标和世界速度 4 个 TSC 视频任务。</p>
+              <h3 data-zh="感知结果展示" data-en="Perception Showcase">感知结果展示</h3>
+              <p data-zh="只展示车辆检测、多目标跟踪、世界坐标和世界速度 4 个 TSC 视频任务。" data-en="Displays only the 4 TSC video tasks: vehicle detection, multi-object tracking, world coordinates, and world speed.">只展示车辆检测、多目标跟踪、世界坐标和世界速度 4 个 TSC 视频任务。</p>
             </div>
-            <a class="card-link" href="#perception">查看感知能力</a>
+            <a class="card-link" href="#perception" data-zh="查看感知能力" data-en="View Perception">查看感知能力</a>
           </article>
 
           <article class="entry-card orange">
             <div>
               <div class="card-index">Shared Interface</div>
-              <h3>共同接口</h3>
-              <p>统一指向 OpenTraffic Team GitHub 组织，承载后续仓库、接口文档和对接材料。</p>
+              <h3 data-zh="共同接口" data-en="Shared Interface">共同接口</h3>
+              <p data-zh="统一指向 OpenTraffic Team GitHub 组织，承载后续仓库、接口文档和对接材料。" data-en="Points to the OpenTraffic Team GitHub organization, hosting all repositories, interface docs, and integration materials.">统一指向 OpenTraffic Team GitHub 组织，承载后续仓库、接口文档和对接材料。</p>
             </div>
             <a class="card-link" href="https://github.com/OpenTraffic-Team/" target="_blank" rel="noreferrer">https://github.com/OpenTraffic-Team/</a>
           </article>
@@ -909,9 +951,9 @@
         <div class="section-head">
           <div>
             <div class="section-kicker">Perception Capabilities</div>
-            <h2>4 个核心视频感知结果</h2>
+            <h2 data-zh="4 个核心视频感知结果" data-en="4 Core Video Perception Results">4 个核心视频感知结果</h2>
           </div>
-          <p>感知组展示范围聚焦 4 个 TSC 视频任务，围绕目标发现、连续跟踪、空间定位和速度估计构成清晰的主线能力。</p>
+          <p data-zh="感知组展示范围聚焦 4 个 TSC 视频任务，围绕目标发现、连续跟踪、空间定位和速度估计构成清晰的主线能力。" data-en="The perception showcase focuses on 4 TSC video tasks, forming a clear capability thread around detection, continuous tracking, spatial localization, and speed estimation.">感知组展示范围聚焦 4 个 TSC 视频任务，围绕目标发现、连续跟踪、空间定位和速度估计构成清晰的主线能力。</p>
         </div>
         <div class="perception-grid">
           <article class="task-card">
@@ -920,11 +962,11 @@
               <span>Video</span>
             </div>
             <div class="task-body">
-              <h3>车辆检测</h3>
+              <h3 data-zh="车辆检测" data-en="Vehicle Detection">车辆检测</h3>
               <div class="task-code">tsc_vehicle_detection</div>
-              <p>识别道路画面中的车辆目标，为后续跟踪、坐标映射和速度估计提供基础输入。</p>
+              <p data-zh="识别道路画面中的车辆目标，为后续跟踪、坐标映射和速度估计提供基础输入。" data-en="Detects vehicles in road footage, providing the foundational input for downstream tracking, coordinate mapping, and speed estimation.">识别道路画面中的车辆目标，为后续跟踪、坐标映射和速度估计提供基础输入。</p>
               <div class="task-links">
-                <a class="mini-link" href="./assets/perception/tsc_vehicle_detection/result_video.mp4">视频结果</a>
+                <a class="mini-link" href="./assets/perception/tsc_vehicle_detection/result_video.mp4" data-zh="视频结果" data-en="Video Result">视频结果</a>
                 <a class="mini-link" href="./assets/perception/tsc_vehicle_detection/result.json">JSON</a>
               </div>
             </div>
@@ -936,11 +978,11 @@
               <span>Video</span>
             </div>
             <div class="task-body">
-              <h3>多目标跟踪</h3>
+              <h3 data-zh="多目标跟踪" data-en="Multi-Object Tracking">多目标跟踪</h3>
               <div class="task-code">tsc_multi_object_tracking</div>
-              <p>保持目标 ID 的连续性，支撑轨迹分析、交通参与者行为理解和时序统计。</p>
+              <p data-zh="保持目标 ID 的连续性，支撑轨迹分析、交通参与者行为理解和时序统计。" data-en="Maintains continuous target IDs to support trajectory analysis, traffic participant behavior understanding, and temporal statistics.">保持目标 ID 的连续性，支撑轨迹分析、交通参与者行为理解和时序统计。</p>
               <div class="task-links">
-                <a class="mini-link" href="./assets/perception/tsc_multi_object_tracking/result_video.mp4">视频结果</a>
+                <a class="mini-link" href="./assets/perception/tsc_multi_object_tracking/result_video.mp4" data-zh="视频结果" data-en="Video Result">视频结果</a>
                 <a class="mini-link" href="./assets/perception/tsc_multi_object_tracking/result.json">JSON</a>
               </div>
             </div>
@@ -952,11 +994,11 @@
               <span>Video</span>
             </div>
             <div class="task-body">
-              <h3>世界坐标</h3>
+              <h3 data-zh="世界坐标" data-en="World Coordinates">世界坐标</h3>
               <div class="task-code">tsc_world_coordinate</div>
-              <p>将图像中的车辆位置转换为真实场景坐标，让感知结果具备空间解释能力。</p>
+              <p data-zh="将图像中的车辆位置转换为真实场景坐标，让感知结果具备空间解释能力。" data-en="Maps vehicle positions from image space to real-world scene coordinates, enabling spatial interpretation of perception results.">将图像中的车辆位置转换为真实场景坐标，让感知结果具备空间解释能力。</p>
               <div class="task-links">
-                <a class="mini-link" href="./assets/perception/tsc_world_coordinate/result_video.mp4">视频结果</a>
+                <a class="mini-link" href="./assets/perception/tsc_world_coordinate/result_video.mp4" data-zh="视频结果" data-en="Video Result">视频结果</a>
                 <a class="mini-link" href="./assets/perception/tsc_world_coordinate/result.json">JSON</a>
               </div>
             </div>
@@ -968,11 +1010,11 @@
               <span>Video</span>
             </div>
             <div class="task-body">
-              <h3>世界速度</h3>
+              <h3 data-zh="世界速度" data-en="World Speed">世界速度</h3>
               <div class="task-code">tsc_world_speed</div>
-              <p>结合轨迹、时间序列和世界坐标估计车辆速度，支撑交通运行状态分析。</p>
+              <p data-zh="结合轨迹、时间序列和世界坐标估计车辆速度，支撑交通运行状态分析。" data-en="Estimates vehicle speed from trajectory, timestamps, and world coordinates to support traffic state analysis.">结合轨迹、时间序列和世界坐标估计车辆速度，支撑交通运行状态分析。</p>
               <div class="task-links">
-                <a class="mini-link" href="./assets/perception/tsc_world_speed/result_video.mp4">视频结果</a>
+                <a class="mini-link" href="./assets/perception/tsc_world_speed/result_video.mp4" data-zh="视频结果" data-en="Video Result">视频结果</a>
                 <a class="mini-link" href="./assets/perception/tsc_world_speed/result.json">JSON</a>
               </div>
             </div>
@@ -987,30 +1029,30 @@
           <div class="section-head" style="position: relative; z-index: 1; color: white;">
             <div>
               <div class="section-kicker" style="color: #8dffd5;">Fusion Flow</div>
-              <h2>控制组与感知组的融合方式</h2>
+              <h2 data-zh="控制组与感知组的融合方式" data-en="How Control &amp; Perception Teams Integrate">控制组与感知组的融合方式</h2>
             </div>
-            <p style="color: rgba(255,255,255,0.72);">控制组保留官网和项目入口，感知组提供真实视频结果，共同接口承接后续仓库和系统对接材料。</p>
+            <p style="color: rgba(255,255,255,0.72);" data-zh="控制组保留官网和项目入口，感知组提供真实视频结果，共同接口承接后续仓库和系统对接材料。" data-en="The control team retains the official site and project entry; the perception team delivers real video results; the shared interface carries all downstream repos and integration materials.">控制组保留官网和项目入口，感知组提供真实视频结果，共同接口承接后续仓库和系统对接材料。</p>
           </div>
           <div class="flow-grid">
             <div class="step">
               <b>Step 01</b>
-              <strong>统一官网入口</strong>
-              <span>对外优先使用 https://opentraffic-team.github.io/，让用户从正式项目页面进入。</span>
+              <strong data-zh="统一官网入口" data-en="Unified Official Entry">统一官网入口</strong>
+              <span data-zh="对外优先使用 https://opentraffic-team.github.io/，让用户从正式项目页面进入。" data-en="Externally use https://opentraffic-team.github.io/ as the primary entry so users start from the formal project page.">对外优先使用 https://opentraffic-team.github.io/，让用户从正式项目页面进入。</span>
             </div>
             <div class="step">
               <b>Step 02</b>
-              <strong>展示感知结果</strong>
-              <span>进入 4 个 TSC 视频任务，展示车辆检测、跟踪、坐标和速度结果。</span>
+              <strong data-zh="展示感知结果" data-en="Showcase Perception Results">展示感知结果</strong>
+              <span data-zh="进入 4 个 TSC 视频任务，展示车辆检测、跟踪、坐标和速度结果。" data-en="Navigate to 4 TSC video tasks demonstrating detection, tracking, coordinates, and speed results.">进入 4 个 TSC 视频任务，展示车辆检测、跟踪、坐标和速度结果。</span>
             </div>
             <div class="step">
               <b>Step 03</b>
-              <strong>连接共同接口</strong>
-              <span>共同接口指向 https://github.com/OpenTraffic-Team/，统一承载仓库和接口材料。</span>
+              <strong data-zh="连接共同接口" data-en="Connect Shared Interface">连接共同接口</strong>
+              <span data-zh="共同接口指向 https://github.com/OpenTraffic-Team/，统一承载仓库和接口材料。" data-en="The shared interface points to https://github.com/OpenTraffic-Team/, hosting all repositories and integration materials.">共同接口指向 https://github.com/OpenTraffic-Team/，统一承载仓库和接口材料。</span>
             </div>
             <div class="step">
               <b>Step 04</b>
-              <strong>迁移到官网</strong>
-              <span>后续可将本文件夹内容合并进 OpenTraffic-Team.github.io 仓库，形成正式公网展示。</span>
+              <strong data-zh="迁移到官网" data-en="Migrate to Official Site">迁移到官网</strong>
+              <span data-zh="后续可将本文件夹内容合并进 OpenTraffic-Team.github.io 仓库，形成正式公网展示。" data-en="The contents of this folder can later be merged into the OpenTraffic-Team.github.io repository for official public deployment.">后续可将本文件夹内容合并进 OpenTraffic-Team.github.io 仓库，形成正式公网展示。</span>
             </div>
           </div>
         </div>
@@ -1022,8 +1064,8 @@
         <div class="developer-panel">
           <div>
             <div class="section-kicker">Developer Access</div>
-            <h2>共同接口与本地演示接口</h2>
-            <p>共同接口用于对外统一入口，本地演示接口用于解释 4 个视频任务如何被页面或业务系统调用。两者不要混在一起讲：对用户讲官网和共同接口，对技术人员再补充本地服务命令。</p>
+            <h2 data-zh="共同接口与本地演示接口" data-en="Shared Interface &amp; Local Demo API">共同接口与本地演示接口</h2>
+            <p data-zh="共同接口用于对外统一入口，本地演示接口用于解释 4 个视频任务如何被页面或业务系统调用。两者不要混在一起讲：对用户讲官网和共同接口，对技术人员再补充本地服务命令。" data-en="The shared interface is the unified external entry; the local demo API explains how the 4 video tasks are consumed by a page or business system. Keep them separate: talk about the official site and shared interface with users, and add local service commands only for technical audiences.">共同接口用于对外统一入口，本地演示接口用于解释 4 个视频任务如何被页面或业务系统调用。两者不要混在一起讲：对用户讲官网和共同接口，对技术人员再补充本地服务命令。</p>
             <div class="repo-box">
 共同接口：https://github.com/OpenTraffic-Team/<br />
 官网入口：https://opentraffic-team.github.io/
@@ -1049,9 +1091,29 @@ curl http://127.0.0.1:8000/api/v1/tasks</code></pre>
 
   <footer class="footer">
     <div class="shell footer-row">
-      <span><strong>OpenTraffic</strong> 控制组与感知组融合展示</span>
+      <span data-zh="<strong>OpenTraffic</strong> 控制组与感知组融合展示" data-en="<strong>OpenTraffic</strong> Control &amp; Perception Fusion"><strong>OpenTraffic</strong> 控制组与感知组融合展示</span>
       <span>官网：https://opentraffic-team.github.io/ · 共同接口：https://github.com/OpenTraffic-Team/</span>
     </div>
   </footer>
+  <script>
+    const PAGE_TITLES = {
+      zh: 'OpenTraffic | 控制与感知融合展示',
+      en: 'OpenTraffic | Control & Perception Fusion'
+    };
+
+    function setLang(lang) {
+      document.title = PAGE_TITLES[lang];
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.querySelectorAll('[data-zh]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('lang-active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('ot-lang', lang);
+    }
+
+    setLang(localStorage.getItem('ot-lang') || 'zh');
+  </script>
 </body>
 </html>
